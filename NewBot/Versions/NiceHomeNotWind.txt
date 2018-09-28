@@ -1,0 +1,103 @@
+int col_KIB, ex_KIB, ey_KIB, sum_KIB, x_KIB, y_KIB;
+int Image_0_KIB[39][26];
+int Image_1_KIB[22][29];
+int Image_2_KIB[34][102];
+int Image_3_KIB[24][10];
+int Image_4_KIB[11][10];
+int Image_5_KIB[11][11];
+int Image_6_KIB[34][23];
+int Image_7_KIB[20][18];
+
+start_();
+
+m_KIB7: if (findimage_(#Image_4_KIB[0][0], 1000, 300, 0, 1, 0, 0, -1, 0, 0, 600, -1, -1, -1, 20, 90, 1, 0, 0, ex_KIB, ey_KIB, #sum_KIB, #x_KIB, #y_KIB)>0) goto m_KIB6; 
+else goto m_KIB6;
+m_KIB6: if (findimage_(#Image_3_KIB[0][0], 300, 500, 0, 1, 0, 0, -1, 0, 0, 500, -1, -1, -1, 30, 70, 1, 0, 0, ex_KIB, ey_KIB, #sum_KIB, #x_KIB, #y_KIB)>0) goto m_KIB2; 
+else goto m_KIB7;
+m_KIB2: if (findimage_(#Image_0_KIB[0][0], 300, 0, 0, 1, 0, 0, -1, 0, 0, 500, -1, -1, 0, 30, 100, 1, 0, 0, ex_KIB, ey_KIB, #sum_KIB, #x_KIB, #y_KIB)>0) goto m_KIB3; 
+else goto m_KIB5;
+m_KIB3: if (findimage_(#Image_1_KIB[0][0], 1000, 0, 0, 1, 0, 0, -1, 0, 0, 0, -1, -1, -1, 30, 90, 1, 0, 0, ex_KIB, ey_KIB, #sum_KIB, #x_KIB, #y_KIB)>0) goto m_KIB0; 
+else goto m_KIB2;
+m_KIB0: if (findimage_(#Image_0_KIB[0][0], 300, 0, 0, 1, 0, 0, -1, 0, 0, 1000, -1, -1, 0, 30, 100, 1, 0, 0, ex_KIB, ey_KIB, #sum_KIB, #x_KIB, #y_KIB)>0) goto m_KIB12; 
+else goto m_KIB4;
+m_KIB12: if (findimage_(#Image_7_KIB[0][0], 100, 500, 0, 1, 0, 0, -1, 0, 0, 500, -1, -1, -1, 20, 80, 1, 0, 0, ex_KIB, ey_KIB, #sum_KIB, #x_KIB, #y_KIB)>0) goto m_KIB7; 
+else goto m_KIB0;
+m_KIB5: if (findimage_(#Image_2_KIB[0][0], 300, 0, 0, 1, 0, 0, -1, 0, 0, 300, -1, -1, 0, 30, 100, 1, 0, 0, ex_KIB, ey_KIB, #sum_KIB, #x_KIB, #y_KIB)>0) goto m_KIB3; 
+else goto m_KIB9;
+m_KIB8: if (findimage_(#Image_5_KIB[0][0], 500, 0, 1500, 1, 0, 0, -1, 0, 0, 1000, -1, -1, -1, 30, 70, 1, 0, 0, ex_KIB, ey_KIB, #sum_KIB, #x_KIB, #y_KIB)>0) goto m_KIB12; 
+else goto m_KIB10;
+m_KIB9: if (findimage_(#Image_5_KIB[0][0], 500, 0, 1500, 1, 0, 0, -1, 0, 0, 1000, -1, -1, -1, 30, 70, 1, 0, 0, ex_KIB, ey_KIB, #sum_KIB, #x_KIB, #y_KIB)>0) goto m_KIB3; 
+else goto m_KIB11;
+m_KIB10: if (findimage_(#Image_6_KIB[0][0], 0, 0, 0, 1, 0, 0, -1, 0, 0, 300, -1, -1, 0, 30, 100, 1, 0, 0, ex_KIB, ey_KIB, #sum_KIB, #x_KIB, #y_KIB)>0) goto m_KIB12; 
+else goto m_KIB12;
+m_KIB11: if (findimage_(#Image_6_KIB[0][0], 0, 0, 0, 1, 0, 0, -1, 0, 0, 300, -1, -1, 0, 30, 100, 1, 0, 0, ex_KIB, ey_KIB, #sum_KIB, #x_KIB, #y_KIB)>0) goto m_KIB3; 
+else goto m_KIB3;
+m_KIB4: if (findimage_(#Image_2_KIB[0][0], 300, 0, 0, 1, 0, 0, -1, 0, 0, 1000, -1, -1, 0, 30, 100, 1, 0, 0, ex_KIB, ey_KIB, #sum_KIB, #x_KIB, #y_KIB)>0) goto m_KIB12; 
+else goto m_KIB8;
+
+
+
+function start_()
+{
+getdisplay(col_KIB, ex_KIB, ey_KIB);
+load_image_();
+pause(1000);
+}
+
+
+function findimage_(int #Image, int t, int p1, int p2, int m, int xm, int ym, int mov_m, int mov_x, int mov_y, int p3, int wait, int cycle, int fon, int r, int p, int k, int xs, int ys, int xf, int yf, int#sum, int#x, int#y)
+{
+int timKIB, sumKIB, xKIB, yKIB, tx, ty, tcycle=0;
+sty: pause(p1);
+sumKIB=0;
+if (t!=0) timKIB=gettime();
+a: if (r==0 && p==100){sum=findimage(k, #Image[0][0], fon, #x[0], #y[0], xs, ys, xf, yf, -1); if (sum>0) goto e;}
+else {sum=findimage(k, #Image[0][0], fon, #x[0], #y[0], xs, ys, xf, yf, r, r, r, r, r, r, p, 1, -1); if (sum>0) goto e;}
+if (t==0) return 0;
+if (gettime()-timKIB<t){sleep(20); goto a;}
+return 0;
+e: sumKIB=sum; xKIB=x[0]; yKIB=y[0];
+pause(p2);
+if (m==1){mouse(LEFT, xs+xKIB+xm, ys+yKIB+ym); goto hy;}
+if (m==2){mouse(MIDDLE, xs+xKIB+xm, ys+yKIB+ym); goto hy;}
+if (m==3){mouse(RIGHT, xs+xKIB+xm, ys+yKIB+ym); goto hy;}
+if (m==4){mousedown(LEFT, xs+xKIB+xm, ys+yKIB+ym); goto hy;}
+if (m==5){mousedown(MIDDLE, xs+xKIB+xm, ys+yKIB+ym); goto hy;}
+if (m==6){mousedown(RIGHT, xs+xKIB+xm, ys+yKIB+ym); goto hy;}
+if (m==7){mouseup(LEFT, xs+xKIB+xm, ys+yKIB+ym); goto hy;}
+if (m==8){mouseup(MIDDLE, xs+xKIB+xm, ys+yKIB+ym); goto hy;}
+if (m==9){mouseup(RIGHT, xs+xKIB+xm, ys+yKIB+ym); goto hy;}
+if (m==10){mousedbl(LEFT, xs+xKIB+xm, ys+yKIB+ym); goto hy;}
+if (m==11){mousedbl(MIDDLE, xs+xKIB+xm, ys+yKIB+ym); goto hy;}
+if (m==12){mousedbl(RIGHT, xs+xKIB+xm, ys+yKIB+ym); goto hy;}
+if (m==13)mousemove(xs+xKIB+xm, ys+yKIB+ym);
+hy: if (mov_m==1)mousemove(mov_x, mov_y);
+if (m>0 && m<14)pause(p3);
+if (wait!=-1)
+{
+for (int ttim=gettime(); gettime()-ttim<wait; sleep(20))
+{
+if (r==0 && p==100){if (findimage(1, #Image[0][0], fon, #x[0], #y[0], xs, ys, xf, yf, -1)==0)return sumKIB;}
+else {if (findimage(1, #Image[0][0], fon, #x[0], #y[0], xs, ys, xf, yf, r, r, r, r, r, r, p, 1, -1)==0)return sumKIB;}
+}
+if (tcycle<cycle){tcycle++; goto sty;}
+return 0;
+}
+return sumKIB;
+}
+
+
+
+
+function load_image_()
+{
+loadimage (#Image_0_KIB[0][0], "D:\Games\railNationStuff\NewBot\Src\tests\SkipAdImroved4.bmp");
+loadimage (#Image_1_KIB[0][0], "D:\Games\railNationStuff\NewBot\Src\Watch_2nd.bmp");
+loadimage (#Image_2_KIB[0][0], "D:\Games\railNationStuff\NewBot\Src\tests\SkipAdMoreImroved.bmp");
+loadimage (#Image_3_KIB[0][0], "D:\Games\railNationStuff\NewBot\Src\tests\Video2.bmp");
+loadimage (#Image_4_KIB[0][0], "D:\Games\railNationStuff\NewBot\Src\Refresh1.bmp");
+loadimage (#Image_5_KIB[0][0], "D:\Games\railNationStuff\NewBot\Src\googleCancel1.bmp");
+loadimage (#Image_6_KIB[0][0], "D:\Games\railNationStuff\NewBot\Src\tests\skipAdNew.bmp");
+loadimage (#Image_7_KIB[0][0], "D:\Games\railNationStuff\NewBot\Src\Take_Reward.bmp");
+}
+

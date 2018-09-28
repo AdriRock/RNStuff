@@ -1,0 +1,9 @@
+int Image_7[25][20];
+loadimage (#Image_7[0][0], "D:\Games\railNationStuff\NewBot\Src\SkipAd.bmp");
+
+int PosX_7[512];
+int PosY_7[512];
+
+int r = 30, p = 70;
+int k = findimage(-1, #Image_7[0][0], 0, #PosX_7[0], #PosY_7[0], 0, 0, 1920, 1080, r,r,r,r,r,r,p,1, -1);
+messagebox(k);
